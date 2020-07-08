@@ -1,6 +1,15 @@
 # PB-Notes-On-Computer-Science-Topics
 My notes while studying the following Computer Science Topics:
+- [Big O](#big-o)
 - [Recursion](#recursion)
+- [Sorting](#sorting)
+
+## Big O
+Big O Notation is a way of describing time and space complexities of our codes/agorithms in terms of general mathematical functions.
+-Space complexitiy is described in one of two formats, in place and out of place.
+   - In place types do not depend on size of the input and the space it takes is predictable
+   - Out of place is the opposite, it needs more space. I suppose we can think of it as it's out of place because it needs more space!
+-The time complexity of a complicated can be determined by splitting it up and then multiplying them, think of the Merge Sort, which can be split into two different time complexities. One which is O(log(N)) and one which is O(N), this results in Merge Sort being O(N log(N))
 
 ## Recursion
 ### What is Recursion
@@ -37,3 +46,14 @@ Also consider how do we get to the base case, what will we do the data that we a
 
 ### Additional Notes on Recursion
 - A recursive helper function is essentially a function within another function, why might we do this? To remove the concern for needing for a recursive function to hold onto infomation with parameters, the outer function can be used to hold onto information. These functions are helpful for when we need to return a list of combinations.
+
+## Sorting
+In regards to sorting algorithms, below are some notes:
+- There are stable sorts and and unstable sorts. Stable sorts keep the initial order of a collection after sorting by some other feature/attribute. This is important to consider especially when you are sorting by two different factors, otherwise, you may not get what you want.
+- There are two types of sorting, distribution sorting and comparison sorting. The names are self-explanatory, essentially one will sort items in a group of other items, and the other compare items to other items for sorting.
+- Bubble Sort is one of the least inefficient sorting algorithms but it's going to know about how it's done to give us content. Bubble sorts starts at one end and then compares the first pair of numbers, and swaps the numbers if the first number is greater than the second number. Then it moves to the second and third number and compares and swaps if necessary, and then so on and so on. This way, the largest number bubbles to the very end, and then we start all over again to have the second largest number bubble to the end.
+- Insertion Sort is when you start at the beginning and then consider the second number and insert it in the right place (considering the two numbers), then move to the next number and insert where it makes sense, and so on and so on. **Bubble Sort and Insertion Sort are the same in terms of their time and space complexity being O(N^2) and O(1) respectively, and both are stable**.
+- Quick Sort and Merge Sort are considered the divide and conquer sorts cause well.. they divide and conquer the collection! Essentially they break down whatever collection we have into multiple smaller pieces (through recursion) and then sort the smaller pieces.
+  -Merge Sort is the sort that first breaks the collection down through recursion in 1 element long, then they combine the elements such that there are several groups of 2, and those sort those, then they comebine again such that there is a group of 4 now, and that is sorted, and so on and so on. If there's an odd number, that's fine too, there can be groups of 3.
+  -Quick Sort is when we pick a pivot in the collection, partition the collection based on that pivot such that all elements lower is one side and all elements higher is on the other side. After this is done, we do it again on the two new sides we created! Partition based on pivot!
+  -It's interesting to note that in terms of Big O Notation, merge sort is O(N log(N)) but Quick Sort is O(N^2), however both algorithms are actually considered to be really effective at sorting, how is this possible? Well, recall Big O Notation is only based on worst case scenario, but generally, on average, they're both O(average)(log(N)). Also consider the fact that Quick Sort uses less memory (O(log(N)), considering the fact that it's not creating a new array like Merge Sort (essentially creates a new array for each element, so it's O(N). Memory can affect the overall speed as well!
