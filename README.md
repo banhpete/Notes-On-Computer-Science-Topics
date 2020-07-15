@@ -3,6 +3,7 @@ My notes while studying the following Computer Science Topics:
 - [Big O](#big-o)
 - [Recursion](#recursion)
 - [Sorting](#sorting)
+- [Data Structures]{#data-structures}
 
 ## Big O
 Big O Notation is a way of describing time and space complexities of our codes/agorithms in terms of general mathematical functions.
@@ -66,3 +67,9 @@ In regards to sorting algorithms, below are some notes:
 - Now for these types of sorting methods, the data is prefered to be densed in the sense that we don't have a huge range. For examples if we were sorting 10 numbers and the minimum number was 3 and the maximum numbers was 1000, but all the other numbers were around 1-30, can you imagine how are buckets will look like? Most elements will fall in one bucket, and this really defeats the purpose of distribution sorting because you're not breaking it into smaller groups and sorting them.
 ### Binary Search
 The Binary Search Algorithim is an algorithm for sorted arrays and only sorted arrays and it is extremely fast. Essentially when going through a collection of items that are sorted you start at the very middle of the collection and then you can decide which side of the collection will have the item you're looking for. Once you do, you discard the other side of the array and you look at the middle of the array you picked, is it the item you're look for? If yes, sweet! If no, then again decide which side of the collection you want and which side you'll discard. So this code will require you to repeatedly find the middle of an array and keep track of an upper and lower bound, until you find your item OR if your middle element becomes starts incepting the upper and lower bound.
+
+## Data Structures
+### Linked List
+- A linked list contains nodes which in the context of a linked list are units that contain data, and potentially two pointers, one pointer to the next item in the list and depending on the type of linked list, a poitner to the previous item in the list. Keep in mind that in other languages besides JavaScript or Python, arrays are static, they're size doesn't grow, this is why linked list are more prevalent in these languages, because it uses pointers to other data, a set size is not required.
+  - Why not use a link list over an array all the time? Because it does require more space since each node needs a pointer and a data and it takes more time to read data as you need to go through the linked list where in an array you can just pick which index
+  - Consider using a linked list when that data that is stored in the linked list needs to be accessed together. Some files are stored as linked list, their data are split into chunks and all the chunks are nodes in a linked list.
