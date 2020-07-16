@@ -96,3 +96,5 @@ The Binary Search Algorithim is an algorithm for sorted arrays and only sorted a
     - Chaining allows allows a table to keep growing since values just keep getting chained on (typically using a linked list), and the values are always predicatable. Chaining does require more memory and processing since we are creating a linked list, AND sometimes certain slots in table will never get filled.
 - Why is this better than just an associative array? Because we're using simple indexes to store data, it will use less memory, and we can still find our data.
 - **Applications:** It's use is great for storing data and retrieiving it fast from a collection of million/billion entries, think of a spell checker. When you type a word, there will be a problem that takes whatever you typed, but it through a hash funciton and then see if it exists in a hash table containing all the known words. If it's not in the table, we know the word is spelt wrong!
+### Sets
+- Sets are another type of a list structure, like an array, however it only allows unique values. These are great for determining how many unique values you have let's say in an array. 
