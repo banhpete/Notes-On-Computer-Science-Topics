@@ -97,4 +97,17 @@ The Binary Search Algorithim is an algorithm for sorted arrays and only sorted a
 - Why is this better than just an associative array? Because we're using simple indexes to store data, it will use less memory, and we can still find our data.
 - **Applications:** It's use is great for storing data and retrieiving it fast from a collection of million/billion entries, think of a spell checker. When you type a word, there will be a problem that takes whatever you typed, but it through a hash funciton and then see if it exists in a hash table containing all the known words. If it's not in the table, we know the word is spelt wrong!
 ### Sets
-- Sets are another type of a list structure, like an array, however it only allows unique values. These are great for determining how many unique values you have let's say in an array. 
+- Sets are another type of a list structure, like an array, however it only allows unique values. These are great for determining how many unique values you have let's say in an array.
+### Trees
+ - A tree is data structure that is a collection of nodes amd edges (the connections between nodes), and there is a visible hierarchy. In a tree:
+   - There is a root node which, despite the name, sits at the very top of the tree, it's the root of all the nodes.
+   - All nodes only have one parent node (we're not talking about a family tree here, only one parent!)
+   - Nodes that have no child nodes are called leaves
+   - The length of the longest path from a leat to the root is a tree's height
+- **Applications:** Where do we see these types of data strucutres in action? Think of your basic file storage, files are all children of one folder (one parent) and it can go on and on. There is a root folder. Essentially anywhere you need a sort of hierachy. Even the DOM, the document object created by the browser, is a a tree!
+- Now, there are specific types of trees, one tree is the binary tree where a node will only have two children max, a left and a right, and the left node will always hold data that is lower than the parent, and the right will hold the higher value.
+- How should traverse a tree structure? There are two ways:
+  - Breadth-first where you go level by level in a tree. I imageine if you go level by level, you need to store in memory which nodes are on which level, therefore breadth-first is more memory intensive (cause it's bread). We should use breadth first if our tree is very deep, or if the value we're looking for we know is near the top, or, if  you're trying to find the shortest path.
+  - For depth-first, it is a more memory efficient method since  you're not holding a node in memory, this method involves going down a branch, then back up, and then down a branch again. Now this is better than breadth-first if we need to get to the bottom of a tree faster, it works better if a tree is wider since it's shorter. We can use depth-first to understand dependencies in data better.
+### Trie
+- A trie, pronounced try, is a type tree used for storing alphabetical data, it is not like binary tree where a node has a left or right, a node can have many edges/connections to other nodes. It's **application** for predicting word says a lot about how it looks like, it's essentially a connection of a bunch of connections to form words. Consider google's search bar, if you type "Be",  you've gone down a trie data structure already, and to predict your word it looks all of the other nodes connected to "Be" which could be a lot.
