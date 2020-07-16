@@ -3,7 +3,7 @@ My notes while studying the following Computer Science Topics:
 - [Big O](#big-o)
 - [Recursion](#recursion)
 - [Sorting](#sorting)
-- [Data Structures]{#data-structures}
+- [Data Structures](#data-structures)
 
 ## Big O
 Big O Notation is a way of describing time and space complexities of our codes/agorithms in terms of general mathematical functions.
@@ -82,3 +82,17 @@ The Binary Search Algorithim is an algorithm for sorted arrays and only sorted a
 - Now there are variations of queues, such as: 
   - The priority queue, where we not only consider when an item was entered in the queue, but also it's priority level. With that in mind, when are removing anything priority queue we need to search through it to find the highest priority, this will have a time complexity of O(n) because you don't know which item has it and you need to go through them all.
   - The double ended queue where we don't just remove items from the beginning but from the end. You can imagine that if you do have a double ended queue, you need to have a doubly linked list. 
+### Hash Tables
+- A hash table is a type of data structure that implements an associative array abstract data type meaning that it maps keys to value but what sets it apart from just your regular associative array (like a javascript object, or a python dictionary) is that when you store data in a hash table, it uses a hash function to decide where the data is stored in the table. 
+- The *hash function* takes a key, which can be the data, or parts of a data, and scrambles it with an algorithm to produce an index in the table, and this where the data will be stored. This has function must be consistent meaning that a key must always have the same value.
+- A perfect hash function would have be written such that no key value will ever produce the same index, but this is unrealistic, the more data we have the more likely we are to run into the situation where the hash function produces the same index value for the same key - this is what is called a collision. We can approach a collision two ways:
+  - We can do probing where if a collision occurs, we just find the next available spot:
+    - Linear probing where we just move to the next spot in the table and see if it's available, if it's not we check the next one after.
+    - Quadractic probing where we check 1 spot after, then 4 spots after, then 9, and so on and so on.
+    - Double Hashing, if a collision occurs, just hash again.
+  - We can also do chaining, where if a collision occurs, that new key is still linked to that index; it's just chained to the element that's already there.
+  - Which way is better?
+    - Probing does not require another data structure, and it allows a table to filled up more efficiently. However, that means a table can be completely filled up, and the addresses of a key is sometimes unpredictable as probing can take a key to some random value
+    - Chaining allows allows a table to keep growing since values just keep getting chained on (typically using a linked list), and the values are always predicatable. Chaining does require more memory and processing since we are creating a linked list, AND sometimes certain slots in table will never get filled.
+- Why is this better than just an associative array? Because we're using simple indexes to store data, it will use less memory, and we can still find our data.
+- **Applications:** It's use is great for storing data and retrieiving it fast from a collection of million/billion entries, think of a spell checker. When you type a word, there will be a problem that takes whatever you typed, but it through a hash funciton and then see if it exists in a hash table containing all the known words. If it's not in the table, we know the word is spelt wrong!
