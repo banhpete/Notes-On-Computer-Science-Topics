@@ -4,6 +4,7 @@ My notes while studying the following Computer Science Topics:
 - [Recursion](#recursion)
 - [Sorting](#sorting)
 - [Data Structures](#data-structures)
+- [Search] (#search)
 
 ## Big O
 Big O Notation is a way of describing time and space complexities of our codes/agorithms in terms of general mathematical functions.
@@ -118,3 +119,9 @@ The Binary Search Algorithim is an algorithm for sorted arrays and only sorted a
   - A graph can be directed or undirected. In a directed graph, a edge between nodes go only one way. In a undirected graph, a edge goes both ways,
   - Graphs can be represented with a two dimension array where a row represnts a node each element in the row represnts an edge to another node. Or it can be represented using an object/dictionary where each node has its own array showing us to which node it's connected to.
   - Graphs can be traversed two ways, breadth-frist and depth-first, like a tree.
+  
+## Search
+### Binary Search
+- A binary search is an algorithm to search in an array that is sorted which is O (log n). 
+- To do this search, we need to use two indexes, one starting at the beginning and the other starting at end. Then we look in the middle.
+- If the value we're looking for is not in the middle, we look at the section that will have the value by looking at the value in middle (because it's sorted). Then we look at the middle of that section. If we can't find the value, it'll be a point where the values repeat, or one the left index is higher than the right index.
