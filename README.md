@@ -125,3 +125,15 @@ The Binary Search Algorithim is an algorithm for sorted arrays and only sorted a
 - A binary search is an algorithm to search in an array that is sorted which is O (log n). 
 - To do this search, we need to use two indexes, one starting at the beginning and the other starting at end. Then we look in the middle.
 - If the value we're looking for is not in the middle, we look at the section that will have the value by looking at the value in middle (because it's sorted). Then we look at the middle of that section. If we can't find the value, it'll be a point where the values repeat, or one the left index is higher than the right index.
+
+## Operating Systems
+### What is an operating system?
+The operating system is the software that acts as the interface between the computer's hardware and other applications that a user might use. It essentially provides three essential capabilities:
+ - A UI for a user to interface with, either through a CLI or GUI, which allows a user to use the OS to do things such as set up/troubleshoot the hardware. 
+ - Launches and manages applications. The OS will also provide APIs to enable the applications to utilize the OS and hardware functions. For example, the OS allow applications to receive inputs from hardware such as a keyboard or mouse.
+ - Manages devices, the OS is responsible for managing devices (identifying and configuring, and providing applications with common access to underlying computer hardware devices)
+ 
+The best way to think of why we need operating system is that it allows software/applications to remain focus on its business logic rather than how it will work with a computer's hardware. Can you imagine if we didn't? Then every application would need its own UI as well as really comprehensive code needed to handle all low-level functionality of the hardware, and that's a lot more code. With OS, these applications just use API's specific to an OS to work with the hardware.
+
+### What is the Kernal?
+The Kernal is considered to be the core of the operating system, this is the piece of the code that makes the operating system really the interface between hardware and other applications. It handles memory management (checks out memory space for the proper execustion of application programs), process management, task management and disk management. It may be easier for us to say that the Kernal and OS is exactly the same but that's not true, the OS is more than the Kernal, the OS also includes the shell (or in general a UI) that allows us to interact with the Kernal.
