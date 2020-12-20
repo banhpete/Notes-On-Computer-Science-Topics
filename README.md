@@ -4,7 +4,7 @@ My notes while studying the following Computer Science Topics:
 - [Recursion](#recursion)
 - [Sorting](#sorting)
 - [Data Structures](#data-structures)
-- [Search] (#search)
+- [Search](#search)
 
 ## Big O
 Big O Notation is a way of describing time and space complexities of our codes/agorithms in terms of general mathematical functions.
