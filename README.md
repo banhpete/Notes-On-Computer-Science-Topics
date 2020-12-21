@@ -6,6 +6,7 @@ My notes while studying the following Computer Science Topics:
 - [Data Structures](#data-structures)
 - [Search](#search)
 - [Operating System](#operating-system)
+- [Virtualizaition](#virtualization)
 
 ## Big O
 Big O Notation is a way of describing time and space complexities of our codes/agorithms in terms of general mathematical functions.
