@@ -7,6 +7,7 @@ My notes while studying the following Computer Science Topics:
 - [Search](#search)
 - [Operating System](#operating-system)
 - [Virtualizaition](#virtualization)
+- [Containers](#containers)
 
 ## Big O
 Big O Notation is a way of describing time and space complexities of our codes/agorithms in terms of general mathematical functions.
@@ -141,9 +142,12 @@ The best way to think of why we need operating system is that it allows software
 The Kernal is considered to be the core of the operating system, this is the piece of the code that makes the operating system really the interface between hardware and other applications. It handles memory management (checks out memory space for the proper execustion of application programs), process management, task management and disk management. It may be easier for us to say that the Kernal and OS is exactly the same but that's not true, the OS is more than the Kernal, the OS also includes the shell (or in general a UI) that allows us to interact with the Kernal.
 
 ## Virtualization 
-Virtualization is the process of creating a virtual version of something (not physically existing as such but made by software to appear to do so). This is commonly done to create virtual computers hence why we have so many virtual machines (essentially computers that exist as a software). To allow for virtualization on a computer, we need to use another software called the hypervisor, this software basically allows us to spin up a virtual computer and then allows it to interact with the host's hardware.
+Virtualization is the process of creating a virtual version of something (not physically existing as such but made by software to appear to do so). This is commonly done to create virtual computers hence why we have so many virtual machines (essentially computers that exist as a software). To allow for virtualization on a computer, we need to use another software called the hypervisor, this software basically allows us to spin up a virtual computer (virtual OS and virtual hardware) and then allows it to interact with the host's hardware.
 
 The benefits of virtualization are:
  - We can fully take advantage of a server and it's resources, especially if we just have a server to host one app. And the same time we can also have less servers.
  - Threat Isolation, a virtual computer is completely isolated from the host computer.
  - It's easier to backup and recover virtual machines because they're essentialy files. You can also easily create identical machines.
+ 
+## Containers
+Containers are essentially a lighter weight, more agile way of handling virtualization, rather than spinning up a virtual machine as we discussed above with the virtual OS and the virtual hardware, it just spins up a virtual operating system which has everything it needs to run a small piece of software and only the software. Because the container consists of the code, dependencies, and operating system, it allows us to run an application any where consistently. 
