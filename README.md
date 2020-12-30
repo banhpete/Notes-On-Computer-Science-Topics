@@ -8,6 +8,7 @@ My notes while studying the following Computer Science Topics:
 - [Operating System](#operating-system)
 - [Virtualizaition](#virtualization)
 - [Containers](#containers)
+- [SOLID Principle](#solid-principle)
 
 ## Big O
 Big O Notation is a way of describing time and space complexities of our codes/agorithms in terms of general mathematical functions.
@@ -151,3 +152,50 @@ The benefits of virtualization are:
  
 ## Containers
 Containers are essentially a lighter weight, more agile way of handling virtualization, rather than spinning up a virtual machine as we discussed above with the virtual OS and the virtual hardware, it just spins up a virtual operating system which has everything it needs to run a small piece of software and only the software. Because the container consists of the code, dependencies, and operating system, it allows us to run an application any where consistently. 
+
+## SOLID Principle
+Remember that OOP is a programming paradigm based on the concept of "objects", everything is an object and each object has their own data and logic (using code of course). Essentially, computer programs are designed by making them out of objects that interact with one another. 
+
+The SOLID Principles are five design principles to help computer programs/softwares more understandable, flexible, extenable, and maintainable. The five principles are
+  1. Single Responsibility Principle
+  2. Open Closed Principle
+  3. Liskov Substitution Principle
+  4. Interface Segregation Principle
+  5. Dependency Inversion Principle
+  
+### Single Responsibility Principle
+This principle essentially says that any class you create should focus on one responsibility/one job. This one really speaks for itself, the more we limit responsibilites given to a class the better it is because:
+ - We know where the logic is for a responsibility
+ - More straight forward to check if a class is working
+ - Easier to understand a class
+ 
+### Open Closed Principle
+This principle states that entities should be extendable without modifying the class itself. For this principle we can think, how can we implement new code without breaking/changing the old code. Think of this as, open to extensibility but closed to modification.
+
+**An example is where:**
+ - We have a classes for shapes, a square, a circle, etc. 
+ - And then we have we have a class called AreaCalculator. Given a list of the shapes, the AreaCalculator will determine the area of each shape based on what the shape is, so essentially there are a bunch of conditionals in the AreaCalculator with different logic.
+ - If we introduce a new shape, say a hexagon, we need to modify the AreaCalculator to include another conditional.
+ - The problem here is that this is not really extensible, everytime we add a new shape we need to modify the original code.
+ 
+**The solution here is:**
+ - Keep the logic in shape classes so that the Area Calculator just calls the function instead. This sort of plays in the single responsibility principle as we are saying that the shape classes should take the responsibility of shape related methods.
+ - How do we ensure all shapes have the function/method that is called in AreaCalculator? Ensure that AreaCalculator uses a interface rather than some object 
+
+### Liskov Substitution Principle
+This principle states that anytime a base case is used in the code, it can easily be replaced with a derived class and do the same.
+
+The idea here is that we are extending the base class without changing it's behaviour, if this isn't done, this could lead to issues because we can use children classes to replace parent classes and if for some reason the child class has a completely different behaviour, we may not get what we expected, or we may even have an error.
+
+Bottom line, when extending a class, make sure the derived class can still be in places where the parent class is used. 
+
+### Interface Segregation Principle
+This principle states that an interface shouldn't cover too much as we don't want a client to implement an interface where it won't need everything on the contract. This is sort of a single responsibility but for interfaces
+
+### Dependency Inversion Principle
+This principle states that high level module must not depend on the low level module, rather both modules should depend on abstractions. So instead of seeing high level classe that are creating the low level classes inside of them (which means there's a depedency on this low level class), these low level classes are being created somewhere else and the high level classes are able to access them.
+
+The idea here is that we are inverting control in the sense that these low level classes are no longer being controlled by a high level class, we have decoupled them. The reason for doing so is because:
+ - We can easily replace the low level class or update it without impact the high level class
+ - This also allows to test classes in isolation easier since we can replace the low level class with some sort of mock that does exactly what we need it to do
+ - It's easier to manage all the dependencies 
