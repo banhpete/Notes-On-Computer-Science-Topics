@@ -9,6 +9,7 @@ My notes while studying the following Computer Science Topics:
 - [Virtualizaition](#virtualization)
 - [Containers](#containers)
 - [SOLID Principle](#solid-principle)
+- [Dependency Injection](#dependency-injection)
 
 ## Big O
 Big O Notation is a way of describing time and space complexities of our codes/agorithms in terms of general mathematical functions.
@@ -199,3 +200,10 @@ The idea here is that we are inverting control in the sense that these low level
  - We can easily replace the low level class or update it without impact the high level class
  - This also allows to test classes in isolation easier since we can replace the low level class with some sort of mock that does exactly what we need it to do
  - It's easier to manage all the dependencies 
+
+## Dependency Injection
+This is the method that supports the Dependency Inversion Principle, and is a technique that falls within the idea of Inversion of Control. In C#, essentially, classes that have depedencies no longer create and manage that dependency, instead, it is passed, or injected into it when instantiated. This classes just need to state its dependencies via interfaces.
+
+This way the higher level classs is also decoupled in the sense that it doesn't know what's being passed into it, as long as it call these methods. This is great for testing in isolation.
+
+**Note:** This is a popular technique in .NET to handle dependencies. The reason we don't see this with NodeJS is because we just handle dependencies with require.
